@@ -1,0 +1,158 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    color: white;
+    background-image: url(day.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+* {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    box-sizing: border-box;
+}
+
+#app {
+    display: grid;
+    grid-auto-rows: minmax(100px, auto);
+    grid-template-rows: 50px repeat(3, auto);
+    height: 100vh;
+    width: auto;
+    background-color: rgba(0, 0, 0, 0.404);
+    justify-content: center;
+    grid-gap: 1em;
+    font-size: 20px;
+    font-family: 'Oswald', sans-serif;
+}
+
+.holder {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.zip {
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+}
+
+.feel {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.entry {
+    outline: 1px solid #fff;
+    margin-bottom: 10px;
+    padding: 10px;
+}
+
+#entryHolder {}
+
+#date {}
+
+#temp {}
+
+#content {}
+
+.headline {
+    justify-content: center;
+    align-items: center;
+    font-weight: 700;
+    letter-spacing: 1.1px;
+}
+
+.title {}
+
+
+/*  Basic Styling To Override Default For Basic HTML Elements */
+
+label {
+    display: block;
+    font-size: 27px;
+}
+
+input {
+    display: block;
+    height: 60px;
+    width: 320px;
+    background: transparent;
+    color: white;
+    font-size: 20px;
+    font-family: 'Oswald', sans-serif;
+    border: none;
+    padding: 5px 10px;
+    outline: 1px solid #fff;
+}
+
+input:focus {
+    outline: 1px solid chartreuse;
+}
+
+button {
+    width: 300px;
+    height: 100px;
+    background: transparent;
+    color: #fff;
+    font-family: 'Oswald', sans-serif;
+    border: none;
+    border: 2px solid white;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.23s linear;
+    font-size: 1.5em;
+}
+
+button:hover {
+    background-color: white;
+    color: black;
+}
+
+h1 {
+    font-size: 36px;
+}
+
+textarea {
+    background: transparent;
+    color: #191919;
+    font-size: 20px;
+    font-family: 'Oswald', sans-serif;
+    padding: 10px 20px;
+    border: 0;
+    resize: none;
+    outline: 1px solid #fff;
+}
+
+textarea:focus {
+    outline: 1px solid chartreuse;
+}
+
+
+/* Reset style for HTML element on active to have no border*/
+
+
+/* Style for Placeholder Text*/
+
+::placeholder {
+    /* Firefox, Chrome, Opera */
+    font-family: 'Oswald', sans-serif;
+    text-align: center;
+    color: #fff;
+}
+
+:-ms-input-placeholder {
+    /* Internet Explorer 10-11 */
+    font-family: 'Oswald', sans-serif;
+    color: #fff;
+    text-align: center;
+}
+
+::-ms-input-placeholder {
+    /* Microsoft Edge */
+    font-family: 'Oswald', sans-serif;
+    color: #fff;
+    text-align: center;
+}
