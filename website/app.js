@@ -8,7 +8,7 @@ let newDate = d.getMonth() + '.' + d.getDate() + '.' + d.getFullYear()
 const baseUrl = 'https://api.openweathermap.org/data/2.5/weather?zip='
 
 //my personal API Key
-const apiKey = ',&appid=b4a90f9b6a7e2a41d313a29b4c71c3e0&units=Metric' //here i added units=metric to get temp in Celsius this pint from api documentation
+const apiKey = ',&appid=b4a90f9b6a7e2a41d313a29b4c71c3e0&units=Metric' //here i added units=metric to get temp in Celsius learnt from api documentation
 
 //get generate btn
 const generate = document.getElementById('generate')
@@ -19,6 +19,7 @@ const temperture = document.getElementById('temp')
 const content = document.getElementById('content')
 
 //addEventListener
+//this function make object contain the data that will show on front end to api user
 generate.addEventListener('click', (e) => {
     //get input fields
     const zip = document.getElementById('zip').value
@@ -34,6 +35,7 @@ generate.addEventListener('click', (e) => {
     })
 })
 
+//this  get request to send user data (zip) using baseUrl and my apiKey
 const getWeatherData = async(baseURl, zip, apiKey) => {
     const response = await fetch(baseURl + zip + apiKey)
     try {
@@ -47,6 +49,9 @@ const getWeatherData = async(baseURl, zip, apiKey) => {
         console.log('error happend:', error)
     }
 }
+
+//post request to get data from web api as json
+
 const postData = async(URL = '', myData = {}) => {
     console.log(myData)
     const response = await fetch(URL, {
@@ -64,6 +69,8 @@ const postData = async(URL = '', myData = {}) => {
         console.log('error happend:', error)
     }
 }
+
+//this function to get data and show it for user
 const showData = async() => {
     const req = await fetch('/all')
     try {
