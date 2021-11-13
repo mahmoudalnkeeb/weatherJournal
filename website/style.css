@@ -15,13 +15,14 @@ body {
 
 #app {
     display: grid;
-    grid-auto-rows: minmax(100px, auto);
-    grid-template-rows: 50px repeat(3, auto);
+    grid-auto-rows: minmax(100px, 100%);
+    grid-template-rows: 50px 100px 200px auto;
     height: 100vh;
-    width: auto;
-    background-color: rgba(0, 0, 0, 0.404);
+    width: 100vw;
+    background-color: rgba(0, 0, 0, 0.2);
     justify-content: center;
-    grid-gap: 1em;
+    align-items: center;
+    grid-gap: 0;
     font-size: 20px;
     font-family: 'Oswald', sans-serif;
 }
@@ -47,63 +48,95 @@ body {
 .entry {
     outline: 1px solid #fff;
     margin-bottom: 10px;
+    background: rgba(0, 0, 0, 0.3);
     padding: 10px;
+    width: 600px;
+    height: 300px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
 }
 
-#entryHolder {}
+#entryHolder {
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+    height: 200px;
+    letter-spacing: 1.2px;
+}
 
-#date {}
+.column {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
 
-#temp {}
+#date {
+    text-transform: uppercase;
+}
 
-#content {}
+#temp {
+    text-transform: uppercase;
+}
+
+#content {
+    text-transform: uppercase;
+}
 
 .headline {
     justify-content: center;
     align-items: center;
     font-weight: 700;
     letter-spacing: 1.1px;
+    color: chartreuse;
+    text-transform: uppercase;
 }
 
-.title {}
+.title {
+    font-size: 1.5em;
+    color: chartreuse;
+}
 
 
 /*  Basic Styling To Override Default For Basic HTML Elements */
 
-label {
-    display: block;
-    font-size: 27px;
-}
-
 input {
     display: block;
     height: 60px;
-    width: 320px;
-    background: transparent;
+    width: 500px;
+    background: rgba(0, 0, 0, 0.3);
     color: white;
-    font-size: 20px;
+    font-size: 24px;
     font-family: 'Oswald', sans-serif;
     border: none;
+    border-radius: 30px;
     padding: 5px 10px;
     outline: 1px solid #fff;
+    text-align: center;
+    text-transform: uppercase;
+    transition: all 0.3s ease-in-out;
+    margin-top: 40px;
 }
 
 input:focus {
     outline: 1px solid chartreuse;
+    transform: scaleX(1.1);
 }
 
 button {
-    width: 300px;
-    height: 100px;
     background: transparent;
+    padding: 15px 30px;
     color: #fff;
     font-family: 'Oswald', sans-serif;
     border: none;
     border: 2px solid white;
-    border-radius: 5px;
+    border-radius: 35px;
     cursor: pointer;
     transition: all 0.23s linear;
-    font-size: 1.5em;
+    font-size: 1.2em;
+    margin-top: 10px;
 }
 
 button:hover {
@@ -116,18 +149,30 @@ h1 {
 }
 
 textarea {
-    background: transparent;
-    color: #191919;
-    font-size: 20px;
+    background: rgba(0, 0, 0, 0.3);
+    color: #fff;
+    font-size: 24px;
     font-family: 'Oswald', sans-serif;
     padding: 10px 20px;
     border: 0;
+    border-radius: 30px;
     resize: none;
     outline: 1px solid #fff;
+    width: 500px;
+    height: 60px;
+    text-align: center;
+    text-transform: uppercase;
+    transition: all 0.3s ease-in-out;
 }
 
 textarea:focus {
     outline: 1px solid chartreuse;
+    transform: scaleX(1.1);
+}
+
+.color {
+    color: chartreuse;
+    font-size: 1.3em;
 }
 
 
@@ -141,6 +186,7 @@ textarea:focus {
     font-family: 'Oswald', sans-serif;
     text-align: center;
     color: #fff;
+    opacity: 0.6;
 }
 
 :-ms-input-placeholder {
@@ -148,6 +194,7 @@ textarea:focus {
     font-family: 'Oswald', sans-serif;
     color: #fff;
     text-align: center;
+    opacity: 0.6;
 }
 
 ::-ms-input-placeholder {
@@ -155,4 +202,5 @@ textarea:focus {
     font-family: 'Oswald', sans-serif;
     color: #fff;
     text-align: center;
+    opacity: 0.6;
 }

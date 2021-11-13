@@ -1,48 +1,50 @@
 // Setup empty JS object to act as endpoint for all routes
-projectData = {};
+projectData = {}
 
 // Require Express to run server and routes
-const express = require("express");
+const express = require('express')
 
 // Start up an instance of app
 
-const app = express();
+const app = express()
 
 /* Middleware*/
 
-const bodyParser = require("body-parser");
+const bodyParser = require('body-parser')
 
 //Here we are configuring express to use body-parser as middle-ware.
 
-app.use(bodyParser.urlencoded({ extended: false }));
-app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: false }))
+app.use(bodyParser.json())
 
 // Cors for cross origin allowance
 
-const cors = require("cors");
-app.use(cors());
+const cors = require('cors')
+app.use(cors())
 
 // Initialize the main project folder
-app.use(express.static("website"));
-// TODO-Spin up the server
-app.post("/add", callBack);
+app.use(express.static('website'))
 
-function callBack(req, res) {
-    res.send("POST received");
-}
-const data = [];
+//routes
 
-app.post("/animal", addAnimal);
+//get route
+app.get('/all', (req, res) => {
+    res.send(projectData)
+})
 
-function addAnimal(req, res) {
-    data.push(req.body);
-}
+//Post data
+
+app.post('/add', (req, res) => {
+    projectData = req.body
+    console.log(projectData)
+})
+
 // Setup Server
-const port = 3000;
-
-const server = app.listen(port, listening);
+const port = 3000
+const host = '127.0.0.1'
+const server = app.listen(port, listening)
 
 function listening() {
-    console.log(server);
-    console.log(`running on localhost: ${port}`);
+    console.log(server)
+    console.log(`running on https://${host}:${port}`)
 }
