@@ -5,7 +5,7 @@ let d = new Date()
 let newDate = d.getMonth() + '.' + d.getDate() + '.' + d.getFullYear()
 
 //baseURl
-const baseUrl = 'https://api.openweathermap.org/data/2.5/weather?zip='
+const baseUrl = 'https://api.openweathermap.org/data/2.5/weather?q='
 
 //my personal API Key
 const apiKey = ',&appid=b4a90f9b6a7e2a41d313a29b4c71c3e0&units=Metric' //here i added units=metric to get temp in Celsius learnt from api documentation
