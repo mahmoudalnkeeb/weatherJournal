@@ -8,7 +8,7 @@ let newDate = d.getMonth() + '.' + d.getDate() + '.' + d.getFullYear()
 const baseUrl = 'https://api.openweathermap.org/data/2.5/weather?q='
 
 //my personal API Key
-const apiKey = ',&appid=b4a90f9b6a7e2a41d313a29b4c71c3e0&units=Metric' //here i added units=metric to get temp in Celsius learnt from api documentation
+const apiKey = ',&appid=YOUR API CODE GOES HERE&units=Metric' //here i added &units=metric to get temp in Celsius learnt from api documentation
 
 //get generate btn
 const generate = document.getElementById('generate')
